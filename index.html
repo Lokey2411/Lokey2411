@@ -107,12 +107,12 @@
         var username = document.getElementById("username").value;
         var password = document.getElementById("password-field").value;
         //Set 1 Admin ảo để đăng nhập quản trị
-        if (username == "admin" && password == "123456789") {
+        if (username == "admin" && password == "1") {
             swal("Thành Công!", "Bạn Đã Đăng Nhập Với Tư Cách Admin", "success");
             window.location = "custommer.html";
             return true;
         }
-        if(username == "votruong" && password == "truongbin") {
+        if(username == "vietbeo" && password == "iamlokey") {
             swal("Thành Công!", "Bạn Đã Đăng Nhập Với Tư Cách Quyền Do Admin Cấp", "success");
             window.location = "custommer.html"
             return true;
@@ -194,6 +194,7 @@
             return i;
         }
     }
+
    </script>
 </body>
 
