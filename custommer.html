@@ -177,7 +177,7 @@ document.querySelector('.fa-floppy-o').onclick = function(){
             </div>
         </div>
     </nav>
-    <div class="container-fluid al">
+    <div class="container-fluid al">    
         <div id="clock"></div>
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
@@ -496,7 +496,7 @@ document.querySelector('.fa-floppy-o').onclick = function(){
                     '<td>' + actions + '</td>' +
                     '</tr>';
                 $("table").append(row);
-                $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+                $("table tbody tr").eq(index + 1).find(".edit").toggle();
                 $('[data-toggle="tooltip"]').tooltip();
             });
             //Add Hàng
@@ -519,7 +519,7 @@ document.querySelector('.fa-floppy-o').onclick = function(){
                         $(this).parent("td").html($(this).val());
                         swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
-                    $(this).parents("tr").find(".add, .edit").toggle();
+                    $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");
 
                 }
@@ -530,7 +530,7 @@ document.querySelector('.fa-floppy-o').onclick = function(){
                     $(this).html('<input type="text" class="form-control" value="' + $(this)
                         .text() + '">');
                 });
-                $(this).parents("tr").find(".add, .edit").toggle();
+                $(this).parents("tr").find(".edit").toggle();
                 $(".add-new").attr("disabled", "disabled");
             });
             jQuery(function () {
