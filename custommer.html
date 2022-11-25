@@ -38,6 +38,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/javascript">
+              class Employee{
+  constructor(name,gender,birthday,address,position){
+    this.name = name;
+    this.gender = gender;
+    this.birthday = birthday;
+    this.address = address;
+    this.position = position;
+}
+
+}
+
+var empList = new Array();
+
+document.querySelector('.fa-floppy-o').onclick = function(){
+    var inputElements = document.querySelectorAll('form-control');
+    var e =  new Employee(inputElements[0],inputElements[1],inputElements[2],inputElements[3],inputElements[4]);
+    empList.push(e);
+    let n = inputElements.length;
+    for(let i=0;i<n;++i){
+        document.write(`<td> ${inputElements[i]}<\td>`);
+    }
+}
         //Phân Trang Cho Table
         //<![CDATA[
         function Pager(tableName, itemsPerPage) {
@@ -109,6 +131,10 @@
             }
         }
         //]]>
+        document.querySelectorAll('b')[1].onclick = function(){
+            swal('Đăng xuất thành công!');
+            window.location = 'hr_management/index.html';
+        }
     </script>
 </head>
 
@@ -142,7 +168,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
-                            <li><a href="/index.html"  data-toggle="tooltip" data-placement="bottom"
+                            <li><a href="/HR-project/index.html"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
                         </ul>
                     </li>
