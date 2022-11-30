@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Đăng Nhập</title>
+    <title>Lokey's HRMW|Đăng Nhập</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -70,14 +70,11 @@
                     <span class="txt1">
                         Bạn quên mật khẩu?
                     </span>
-                    <a class="txt2" href="/tim-lai-mat-khau.html">
+                    <a class="txt2" href="./tim-lai-mat-khau.html">
                         Tài khoản / mật khẩu?
                     </a>
                 </div>
                 <div class="text-center p-t-135">
-                    <a class="txt2" href="#"> <i class="fa fa-copyright" aria-hidden="true"></i>
-                    </a>
-                </div>
                 </form>
             </div>
         </div>
@@ -107,12 +104,12 @@
         var password = document.getElementById("password-field").value;
         //Set 1 Admin ảo để đăng nhập quản trị
         if (username == "admin" && password == "1") {
-            swal("Thành Công!", "Bạn Đã Đăng Nhập Với Tư Cách Admin", "success");
+            swal("Success!", "Bạn Đã Đăng Nhập Với Tư Cách Admin", "success");
             window.location = "custommer.html";
             return true;
         }
         if(username == "vietbeo" && password == "iamlokey") {
-            swal("Thành Công!", "Bạn Đã Đăng Nhập Với Tư Cách Quyền Do Admin Cấp", "success");
+            swal("Success!", "Bạn Đã Đăng Nhập Với Tư Cách Quyền Do Admin Cấp", "success");
             window.location = "custommer.html"
             return true;
         }
@@ -141,7 +138,7 @@
             swal("Bạn Nhập Dư Mật Khẩu", "Vui Lòng Kiểm Tra Lại Mật Khẩu", "error");
             return false;
         }
-        swal("Thông Tin Bạn Nhập Không Tồn Tại", "Vui Lòng Kiểm Tra Hoặc Nhấn Quên Mật Khẩu", "error");
+        swal("Account Invalid", "Vui Lòng Kiểm Tra Hoặc Nhấn Quên Mật Khẩu", "error");
     }
 
     //show/hide pass

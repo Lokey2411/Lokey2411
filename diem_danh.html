@@ -49,50 +49,30 @@
 
 }
 
+var empList = new Array();
 var lokeyFunction = function(){
     var inputElements = document.querySelectorAll('.form-control');
-    // let file = "custommer.txt";
+
     for(let i=0;i<5;++i){
         document.write(`<td> ${inputElements[i]}<\td>`);
-        writeTextFile(inputElements[i],file);
-
     }
-
 }
 
-// function writeTextFile(inputTextToSave,inputFileNameToSaveAs)
-// {
-//     // var textToWrite = document.getElementById(inputTextToSave).value;
-//     var textFileAsBlob = new Blob([inputTextToSave], {type:'text/plain'});
-//     // var fileNameToSaveAs = document.getElementById(inputFileNameToSaveAs).value;
-//       var downloadLink = document.createElement("a");
-//     downloadLink.download = inputFileNameToSaveAs;
-//     downloadLink.innerHTML = "Download File";
-//     if (window.webkitURL != null)
-//     {
-//         // Chrome allows the link to be clicked
-//         // without actually adding it to the DOM.
-//         downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-//     }
-//     else
-//     {
-//         // Firefox requires the link to be added to the DOM
-//         // before it can be clicked.
-//         downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-//         downloadLink.onclick = destroyClickedElement;
-//         downloadLink.style.display = "none";
-//         document.body.appendChild(downloadLink);
-//     }
- 
-//     downloadLink.click();
+function writeTextFile(afilename, output)
+{
+  var txtFile =new File(afilename);
+  txtFile.writeln(output);
+  txtFile.close();
+}
+
+// var save = document.getElementsByClassName('add');
+
+// var n = save.length;
+// console.log(save);
+// for(let i=0;i<n;++i){
+//     save[i].addEventListener(click,lokeyFunction);
+//     // console.log(save[i]);
 // }
-
-var save = document.querySelectorAll('.fa-floppy-o');
-
-var n = save.length;
-for(let i=0;i<n;++i){
-    save[i].onclick = lokeyFunction;
-}
 
 // $(document).on('click','.add',lokeyFunction);
         //Phân Trang Cho Table
@@ -169,10 +149,17 @@ for(let i=0;i<n;++i){
         var logOut = document.querySelectorAll('b')[1];
         logOut.onclick = function(){
             swal('Đăng xuất thành công!\nTrở về trang chủ');
-            window.location = 'hr_management/index.html';
+            window.location = './index.html';
         }
     </script>
-    
+<style>
+    #diem-danh{
+        background-color: #e7e7e7;
+    }
+    .active{
+        background-color: transparent !important;
+    }
+</style>
 </head>
 
 <body onload="time()">
@@ -187,9 +174,9 @@ for(let i=0;i<n;++i){
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN">NHÂN VIÊN</a></li>
-                    <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
+                    <li class="active"><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
                         title="ĐIỂM DANH">ĐIỂM DANH</a></li>
                     <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
                         title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
@@ -205,7 +192,7 @@ for(let i=0;i<n;++i){
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
-                            <li><a href="./index.html"  data-toggle="tooltip" data-placement="bottom"
+                            <li><a href="/hr_management/index.html"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
                         </ul>
                     </li>
@@ -244,10 +231,10 @@ for(let i=0;i<n;++i){
             <thead>
                 <tr class="ex">
                     <th width="auto">Tên Nhân Viên</th>
-                    <th width="auto">Giới Tính</th>
                     <th>Ngày Sinh</th>
                     <th>Địa Chỉ</th>
-                    <th>Chức Vụ</th>
+                    <th width="auto">Điểm danh đến</th>
+                    <th>Điểm danh về</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
             </thead>
@@ -471,7 +458,7 @@ for(let i=0;i<n;++i){
                 if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
-                    swal("", "Bạn Đã Lọc thành công", "success");
+                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
                 }
             }
         }
@@ -543,18 +530,18 @@ for(let i=0;i<n;++i){
                 input.each(function () {
                     if (!$(this).val()) {
                         $(this).addClass("error");
-                        swal("", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
+                        swal("Thông Báo!", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
                         empty = true;
                     } else {
                         $(this).removeClass("error");
-                        swal("", "Bạn Chưa Nhập Dữ Liệu", "error");
+                        swal("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "error");
                     }
                 });
                 $(this).parents("tr").find(".error").first().focus();
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Success!", "Bạn Đã Cập Nhật Thành công", "success");
+                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");
@@ -572,13 +559,13 @@ for(let i=0;i<n;++i){
             });
             jQuery(function () {
                 jQuery(".add").click(function () {
-                    swal("Success!", "Bạn Đã Sửa Thành công", "success");
+                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
                 });
             });
             // Delete Hàng
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();
-                swal("Success!", "Bạn Đã Xóa Thành công", "success");
+                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });
