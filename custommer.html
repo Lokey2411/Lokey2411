@@ -60,33 +60,6 @@ var lokeyFunction = function(){
 
 }
 
-// function writeTextFile(inputTextToSave,inputFileNameToSaveAs)
-// {
-//     // var textToWrite = document.getElementById(inputTextToSave).value;
-//     var textFileAsBlob = new Blob([inputTextToSave], {type:'text/plain'});
-//     // var fileNameToSaveAs = document.getElementById(inputFileNameToSaveAs).value;
-//       var downloadLink = document.createElement("a");
-//     downloadLink.download = inputFileNameToSaveAs;
-//     downloadLink.innerHTML = "Download File";
-//     if (window.webkitURL != null)
-//     {
-//         // Chrome allows the link to be clicked
-//         // without actually adding it to the DOM.
-//         downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-//     }
-//     else
-//     {
-//         // Firefox requires the link to be added to the DOM
-//         // before it can be clicked.
-//         downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-//         downloadLink.onclick = destroyClickedElement;
-//         downloadLink.style.display = "none";
-//         document.body.appendChild(downloadLink);
-//     }
- 
-//     downloadLink.click();
-// }
-
 var save = document.querySelectorAll('.fa-floppy-o');
 
 var n = save.length;
@@ -189,15 +162,15 @@ for(let i=0;i<n;++i){
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN">NHÂN VIÊN</a></li>
-                    <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
-                        title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="" data-toggle="tooltip" data-placement="bottom"
+                        title="">ĐIỂM DANH</a></li>
+                    <li><a href=""  data-toggle="tooltip" data-placement="bottom"
                         title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
-                    <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href=""  data-toggle="tooltip" data-placement="bottom"
                         title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a></li>
-                    <li><a href="./baocao.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href=""  data-toggle="tooltip" data-placement="bottom"
                         title="BÁO CÁO">BÁO CÁO</a></li>
-                    <li><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="  data-toggle="tooltip" data-placement="bottom"
                         title="SỰ KIỆN">SỰ KIỆN</a></li>
                     <li>
                         <a href="#"  data-toggle="tooltip" data-placement="bottom"
