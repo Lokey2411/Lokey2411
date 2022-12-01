@@ -49,15 +49,14 @@
 
 }
 
-var empList = new Array();
 var lokeyFunction = function(){
     var inputElements = document.querySelectorAll('.form-control');
 
     for(let i=0;i<5;++i){
         document.write(`<td> ${inputElements[i]}<\td>`);
     }
-
 }
+
         //Phân Trang Cho Table
         //<![CDATA[
         function Pager(tableName, itemsPerPage) {
@@ -135,7 +134,14 @@ var lokeyFunction = function(){
             window.location = './index.html';
         }
     </script>
-    
+<style>
+    #diem-danh{
+        background-color: #e7e7e7;
+    }
+    .active{
+        background-color: transparent !important;
+    }
+</style>
 </head>
 
 <body onload="time()">
@@ -152,9 +158,9 @@ var lokeyFunction = function(){
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN">NHÂN VIÊN</a></li>
-                    <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
+                    <li class="active"><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
                         title="ĐIỂM DANH">ĐIỂM DANH</a></li>
-                    <li class="active"><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
                         title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
                     <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
                         title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a></li>
@@ -209,8 +215,8 @@ var lokeyFunction = function(){
                     <th width="auto">Tên Nhân Viên</th>
                     <th>Ngày Sinh</th>
                     <th>Địa Chỉ</th>
-                    <th>Chức Vụ</th>
-                    <th width="auto">Lương</th>
+                    <th width="auto">Điểm danh đến</th>
+                    <th>Điểm danh về</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
             </thead>
