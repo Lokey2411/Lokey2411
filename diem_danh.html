@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- <meta charset="UTF-8"> -->
+    <meta charset="UTF-8">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,14 +49,71 @@
 
 }
 
+var clickCount = 0;
+
 var lokeyFunction = function(){
+    // ++clickCount;
     var inputElements = document.querySelectorAll('.form-control');
 
     for(let i=0;i<5;++i){
         document.write(`<td> ${inputElements[i]}<\td>`);
     }
+    // if(clickCount>1)clickCount = 0;
+    // if(clickCount%2 == 0)timeBreak('diem-danh-den',clickCount);
 }
 
+var checkInToElements = document.getElementsByClassName('den');
+
+var n = checkInToElements.length;
+
+// alert(checkInToElements);
+
+    // alert(checkInToElements[i]);
+
+for(let i=0;i<n;++i){
+    checkInToElements[i].onclick
+}
+
+function timeBreak(clock){
+    swal('Đã lưu thành công giờ');
+    var today = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Chủ Nhật";
+    weekday[1] = "Thứ Hai";
+    weekday[2] = "Thứ Ba";
+    weekday[3] = "Thứ Tư";
+    weekday[4] = "Thứ Năm";
+    weekday[5] = "Thứ Sáu";
+    weekday[6] = "Thứ Bảy";
+    var day = weekday[today.getDay()];
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    nowTime = h + ":" + m + ":" + s;
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+    today = day + ', ' + dd + '/' + mm + '/' + yyyy;
+    tmp = '<span class="date">' + today + ' | ' + nowTime +'</span>';
+    // alert(clock);
+    clock.classList.toggle('clock')
+    // document.getElementsByClassName('clock')[0].classList.toggle('clock');
+    // document.getElementsByClassName("clock" onclick = "timeBreak(this);")[1].innerHTML = tmp
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+        }
         //Phân Trang Cho Table
         //<![CDATA[
         function Pager(tableName, itemsPerPage) {
@@ -138,8 +195,11 @@ var lokeyFunction = function(){
     #diem-danh{
         background-color: #e7e7e7;
     }
-    .active{
-        background-color: transparent !important;
+    .den, .ve{
+        cursor: pointer;
+    }
+    .den::before ,.ve::before{
+        color: blue;
     }
 </style>
 </head>
@@ -156,6 +216,8 @@ var lokeyFunction = function(){
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
+                        title="QUẢN LÝ">QUẢN LÝ</a></li>
                     <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN">NHÂN VIÊN</a></li>
                     <li class="active"><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
@@ -184,7 +246,7 @@ var lokeyFunction = function(){
         </div>
     </nav>
     <div class="container-fluid al">    
-        <div id="clock"></div>
+        <!-- <div id="clock" onclick = "timeBreak(this);"></div> -->
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên nhân viên cần tìm..."
@@ -212,9 +274,9 @@ var lokeyFunction = function(){
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr class="ex">
+                    <th>Mã nhân viên</th>
                     <th width="auto">Tên Nhân Viên</th>
-                    <th>Ngày Sinh</th>
-                    <th>Địa Chỉ</th>
+                    <th>Quản Lý</th>
                     <th width="auto">Điểm danh đến</th>
                     <th>Điểm danh về</th>
                     <th width="5px; !important">Tính Năng</th>
@@ -225,9 +287,9 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
 
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -241,9 +303,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -257,9 +318,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -273,9 +333,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -289,9 +348,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -305,8 +363,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -320,8 +378,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -335,8 +393,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -350,8 +408,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -365,8 +423,8 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -472,9 +530,19 @@ var lokeyFunction = function(){
                 mm = '0' + mm
             }
             today = day + ', ' + dd + '/' + mm + '/' + yyyy;
-            tmp = '<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="date">' + today + ' | ' + nowTime +
-                '</span>';
-            document.getElementById("clock").innerHTML = tmp;
+            tmp = '<span class="date">' + today + ' | ' + nowTime +
+                '</span>'+``;
+
+            var elem = document.getElementsByClassName('clock');
+            var n = elem.length;
+            for(let i=0;i<n;i+=2){
+                elem[i].innerHTML  = tmp + `<br/><i class="fa fa-floppy-o den" aria-hidden="true"></i>`;
+            }
+
+            for(let i=1;i<n;i+=2){
+                elem[i].innerHTML = tmp + `<br/><i class="fa fa-floppy-o ve" aria-hidden="true" class = "di"></i>`;
+            }
+
             clocktime = setTimeout("time()", "1000", "Javascript");
 
             function checkTime(i) {
@@ -495,10 +563,10 @@ var lokeyFunction = function(){
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
+                    '<td><input type="text" class="form-control" name="captren" id="captren" placeholder="Nhập Quản Lý"></td>' +
                     '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
-                    '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
-                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
+                    '<td><div id = "clock" onclick = "timeBreak(this);"></div></td>' +
+                    '<td><div id = "clock" onclick = "timeBreak(this);"></div></td>' +
                     '<td>' + actions + '</td>' +
                     '</tr>';
                 $("table").append(row);

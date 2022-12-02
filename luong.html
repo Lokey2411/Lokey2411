@@ -150,6 +150,8 @@ var lokeyFunction = function(){
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
+                        title="QUẢN LÝ">QUẢN LÝ</a></li>
                     <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN">NHÂN VIÊN</a></li>
                     <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
@@ -206,11 +208,11 @@ var lokeyFunction = function(){
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr class="ex">
+                    <th>Mã Nhân Viên</th>
                     <th width="auto">Tên Nhân Viên</th>
-                    <th>Ngày Sinh</th>
-                    <th>Địa Chỉ</th>
+                    <th>Quản Lý</th>
                     <th>Chức Vụ</th>
-                    <th width="auto">Lương</th>
+                    <th width="auto">Lương tháng</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
             </thead>
@@ -489,9 +491,9 @@ var lokeyFunction = function(){
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
+                    '<td><input type="text" class="form-control" name="captren" id="captren" placeholder="Nhập Quản Lý"></td>' +
                     '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
-                    '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
+                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã Nhân Viên"></td>' +
                     '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
                     '<td>' + actions + '</td>' +
                     '</tr>';

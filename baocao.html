@@ -150,6 +150,8 @@ var lokeyFunction = function(){
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
+                    <li"><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
+                        title="NHÂN VIÊN">QUẢN LÝ</a></li>
                     <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN">NHÂN VIÊN</a></li>
                     <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
@@ -206,9 +208,8 @@ var lokeyFunction = function(){
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr class="ex">
-                    <th width="auto">Tên Nhân Viên</th>
-                    <th>Ngày Sinh</th>
-                    <th>Địa Chỉ</th>
+                    <th width="auto">Tên Báo Cáo</th>
+                    <th>Mã Nhân Viên</th>
                     <th>Chức Vụ</th>
                     <th width="auto">Tiến độ công việc</th>
                     <th width="5px; !important">Tính Năng</th>
@@ -220,8 +221,6 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-
-                    <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -236,8 +235,6 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-
-                    <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -251,8 +248,6 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
                     <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
@@ -268,8 +263,6 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-
-                    <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -280,23 +273,6 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -315,6 +291,19 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
@@ -330,7 +319,6 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -345,7 +333,6 @@ var lokeyFunction = function(){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -356,7 +343,6 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -490,8 +476,7 @@ var lokeyFunction = function(){
                 var row = '<tr>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
                     '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
-                    '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
-                    '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Địa Chỉ"></td>' +
+                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã Nhân Viên"></td>' +
                     '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
                     '<td>' + actions + '</td>' +
                     '</tr>';
