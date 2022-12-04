@@ -48,59 +48,72 @@
 }
 
 }
-let parent = document.getElementsByTagName('tr');
 
-
-// parent = Object.values(parent); 
-
-// let k = parent.shift();
-
+var clickCount = 0;
 
 var lokeyFunction = function(){
+    // ++clickCount;
     var inputElements = document.querySelectorAll('.form-control');
-    // let file = "custommer.txt";
+
     for(let i=0;i<5;++i){
         document.write(`<td> ${inputElements[i]}<\td>`);
-        parent[i+1].outerHTML = `<td> ${inputElements[i]}<\td>`;    
     }
-
+    // if(clickCount>1)clickCount = 0;
+    // if(clickCount%2 == 0)timeBreak('diem-danh-den',clickCount);
 }
 
-// function writeTextFile(inputTextToSave,inputFileNameToSaveAs)
-// {
-//     // var textToWrite = document.getElementById(inputTextToSave).value;
-//     var textFileAsBlob = new Blob([inputTextToSave], {type:'text/plain'});
-//     // var fileNameToSaveAs = document.getElementById(inputFileNameToSaveAs).value;
-//       var downloadLink = document.createElement("a");
-//     downloadLink.download = inputFileNameToSaveAs;
-//     downloadLink.innerHTML = "Download File";
-//     if (window.webkitURL != null)
-//     {
-//         // Chrome allows the link to be clicked
-//         // without actually adding it to the DOM.
-//         downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-//     }
-//     else
-//     {
-//         // Firefox requires the link to be added to the DOM
-//         // before it can be clicked.
-//         downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-//         downloadLink.onclick = destroyClickedElement;
-//         downloadLink.style.display = "none";
-//         document.body.appendChild(downloadLink);
-//     }
- 
-//     downloadLink.click();
-// }
+var checkInToElements = document.getElementsByClassName('den');
 
-var save = document.querySelectorAll('.fa-floppy-o');
+var n = checkInToElements.length;
 
-var n = save.length;
+// alert(checkInToElements);
+
+    // alert(checkInToElements[i]);
+
 for(let i=0;i<n;++i){
-    save[i].onclick = lokeyFunction;
+    checkInToElements[i].onclick
 }
 
-// $(document).on('click','.add',lokeyFunction);
+function timeBreak(clock){
+    swal('Đã lưu thành công giờ');
+    var today = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Chủ Nhật";
+    weekday[1] = "Thứ Hai";
+    weekday[2] = "Thứ Ba";
+    weekday[3] = "Thứ Tư";
+    weekday[4] = "Thứ Năm";
+    weekday[5] = "Thứ Sáu";
+    weekday[6] = "Thứ Bảy";
+    var day = weekday[today.getDay()];
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    nowTime = h + ":" + m + ":" + s;
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+    today = day + ', ' + dd + '/' + mm + '/' + yyyy;
+    tmp = '<span class="date">' + today + ' | ' + nowTime +'</span>';
+    // alert(clock);
+    clock.classList.toggle('clock')
+    // document.getElementsByClassName('clock')[0].classList.toggle('clock');
+    // document.getElementsByClassName("clock" onclick = "timeBreak(this);")[1].innerHTML = tmp
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+        }
         //Phân Trang Cho Table
         //<![CDATA[
         function Pager(tableName, itemsPerPage) {
@@ -175,11 +188,20 @@ for(let i=0;i<n;++i){
         var logOut = document.querySelectorAll('b')[1];
         logOut.onclick = function(){
             swal('Đăng xuất thành công!\nTrở về trang chủ');
-            window.location = 'hr_management/index.html';
+            window.location = './index.html';
         }
     </script>
-    <style>
-    </style>
+<style>
+    #diem-danh{
+        background-color: #e7e7e7;
+    }
+    .den, .ve{
+        cursor: pointer;
+    }
+    .den::before ,.ve::before{
+        color: blue;
+    }
+</style>
 </head>
 
 <body onload="time()">
@@ -189,33 +211,32 @@ for(let i=0;i<n;++i){
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"style="color: #000 !important;"><i class="fa fa-user-circle" aria-hidden="true" ></i> QUẢN
+                <a class="navbar-brand" href="#" style="color: #000 !important;"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
                     LÝ NHÂN VIÊN</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
                         title="QUẢN LÝ" style="color: #000 !important;">QUẢN LÝ</a></li>
-                    <li class="active"><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN" style="color: #000 !important;">NHÂN VIÊN</a></li>
-                    <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
+                    <li class="active" style="color: #000 !important;"><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
                         title="ĐIỂM DANH" style="color: #000 !important;">ĐIỂM DANH</a></li>
                     <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
                         title="TIỀN LƯƠNG" style="color: #000 !important;">TIỀN LƯƠNG</a></li>
-                    <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom" 
-                        title="CÔNG TÁC" style="color: #000 !important;">
-                        CÔNG TÁC</a></li>
+                    <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="CÔNG TÁC" style="color: #000 !important;">CÔNG TÁC</a></li>
                     <li><a href="./baocao.html"  data-toggle="tooltip" data-placement="bottom"
                         title="BÁO CÁO" style="color: #000 !important;">BÁO CÁO</a></li>
                     <li><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
                         title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
                         <a href="#"  data-toggle="tooltip" data-placement="bottom"
-                        title="TÀI KHOẢN"><b>Tài Khoản</b>
+                        title="TÀI KHOẢN" style="color: #000 !important;"><b>Tài Khoản</b>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
-                            <li><a href="./index.html"  data-toggle="tooltip" data-placement="bottom"
+                            <li><a href="/hr_management/index.html"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
                         </ul>
                     </li>
@@ -225,7 +246,7 @@ for(let i=0;i<n;++i){
         </div>
     </nav>
     <div class="container-fluid al">    
-        <div id="clock"></div>
+        <!-- <div id="clock" onclick = "timeBreak(this);"></div> -->
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên nhân viên cần tìm..."
@@ -255,9 +276,9 @@ for(let i=0;i<n;++i){
                 <tr class="ex">
                     <th>Mã nhân viên</th>
                     <th width="auto">Tên Nhân Viên</th>
-                    <th width="auto">Mã Quản lý</th>
-                    <th>Đơn vị</th>
-                    <th>Chức Vụ</th>
+                    <th>Mã Quản Lý</th>
+                    <th width="auto">Điểm danh đến</th>
+                    <th>Điểm danh về</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
             </thead>
@@ -266,9 +287,9 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
 
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -282,9 +303,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -298,9 +318,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -314,9 +333,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -330,9 +348,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -346,8 +363,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -361,8 +378,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -376,8 +393,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -391,8 +408,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -406,8 +423,8 @@ for(let i=0;i<n;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
+                    <td class = "clock" onclick = "timeBreak(this);"></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -481,7 +498,7 @@ for(let i=0;i<n;++i){
                 if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
-                    swal("", "Bạn Đã Lọc thành công", "success");
+                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
                 }
             }
         }
@@ -513,9 +530,19 @@ for(let i=0;i<n;++i){
                 mm = '0' + mm
             }
             today = day + ', ' + dd + '/' + mm + '/' + yyyy;
-            tmp = '<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="date">' + today + ' | ' + nowTime +
-                '</span>';
-            document.getElementById("clock").innerHTML = tmp;
+            tmp = '<span class="date">' + today + ' | ' + nowTime +
+                '</span>'+``;
+
+            var elem = document.getElementsByClassName('clock');
+            var n = elem.length;
+            for(let i=0;i<n;i+=2){
+                elem[i].innerHTML  = tmp + `<br/><i class="fa fa-floppy-o den" aria-hidden="true"></i>`;
+            }
+
+            for(let i=1;i<n;i+=2){
+                elem[i].innerHTML = tmp + `<br/><i class="fa fa-floppy-o ve" aria-hidden="true"></i>`;
+            }
+
             clocktime = setTimeout("time()", "1000", "Javascript");
 
             function checkTime(i) {
@@ -535,11 +562,11 @@ for(let i=0;i<n;++i){
                 $(this).attr("disabled", "disabled");
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
-                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã nhân viên"></td>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="captrn" id="gioitinh" placeholder="Nhập Mã Quản lý"></td>' +
-                    '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Đơn vị"></td>' +
-                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
+                    '<td><input type="text" class="form-control" name="captren" id="captren" placeholder="Nhập Mã Quản Lý"></td>' +
+                    '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
+                    '<td><div id = "clock" onclick = "timeBreak(this);"></div></td>' +
+                    '<td><div id = "clock" onclick = "timeBreak(this);"></div></td>' +
                     '<td>' + actions + '</td>' +
                     '</tr>';
                 $("table").append(row);
@@ -553,18 +580,18 @@ for(let i=0;i<n;++i){
                 input.each(function () {
                     if (!$(this).val()) {
                         $(this).addClass("error");
-                        swal("", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
+                        swal("Thông Báo!", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
                         empty = true;
                     } else {
                         $(this).removeClass("error");
-                        swal("", "Bạn Chưa Nhập Dữ Liệu", "error");
+                        swal("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "error");
                     }
                 });
                 $(this).parents("tr").find(".error").first().focus();
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Success!", "Bạn Đã Cập Nhật Thành công", "success");
+                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");
@@ -582,13 +609,13 @@ for(let i=0;i<n;++i){
             });
             jQuery(function () {
                 jQuery(".add").click(function () {
-                    swal("Success!", "Bạn Đã Sửa Thành công", "success");
+                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
                 });
             });
             // Delete Hàng
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();
-                swal("Success!", "Bạn Đã Xóa Thành công", "success");
+                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });
