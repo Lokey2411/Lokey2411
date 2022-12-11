@@ -13,7 +13,7 @@
     <meta property="og:title" content="Website lokey" />
     <meta property="og:description" content="Wellcome to my Website" />
 
-    <title>Lịch công tác | Quản Lý Bán Hàng</title>
+    <title>Báo Cáo | Quản Lý Bán Hàng</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
@@ -53,9 +53,9 @@ var empList = new Array();
 var lokeyFunction = function(){
     var inputElements = document.querySelectorAll('.form-control');
 
-for(let i=0;i<5;++i){
-    document.write(`<td> ${inputElements[i]}<\td>`);
-}
+    for(let i=0;i<5;++i){
+        document.write(`<td> ${inputElements[i]}<\td>`);
+    }
 }
 
         //Phân Trang Cho Table
@@ -150,20 +150,17 @@ for(let i=0;i<5;++i){
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
-                    title="NGƯỜI QUẢN LÝ" style="color: #000 !important;">NGƯỜI QUẢN LÝ</a></li>
-                    
-                    <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./customer_nv.html" data-toggle="tooltip" data-placement="bottom"
                         title="NHÂN VIÊN" style="color: #000 !important;">NHÂN VIÊN</a></li>
-                    <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./diem_danh_nv.html" data-toggle="tooltip" data-placement="bottom"
                         title="ĐIỂM DANH" style="color: #000 !important;">ĐIỂM DANH</a></li>
-                    <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./luong_nv.html"  data-toggle="tooltip" data-placement="bottom"
                         title="TIỀN LƯƠNG" style="color: #000 !important;">TIỀN LƯƠNG</a></li>
-                    <li class="active" style="color: #000 !important;"><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="CÔNG TÁC" style="color: #000 !important;" >CÔNG TÁC</a></li>
-                    <li><a href="./baocao.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./lich_nv.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="CÔNG TÁC" style="color: #000 !important;">CÔNG TÁC</a></li>
+                    <li class="active" style="color: #000 !important;" ><a href="./baocao_nv.html"  data-toggle="tooltip" data-placement="bottom"
                         title="BÁO CÁO" style="color: #000 !important;">BÁO CÁO</a></li>
-                    <li><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./sukien_nv.html"  data-toggle="tooltip" data-placement="bottom"
                         title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
                         <a href="#"  data-toggle="tooltip" data-placement="bottom"
@@ -171,7 +168,7 @@ for(let i=0;i<5;++i){
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
-                            <li><a href="/hr_management/index.html"  data-toggle="tooltip" data-placement="bottom"
+                            <li><a href="./index.html"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
                         </ul>
                     </li>
@@ -209,11 +206,10 @@ for(let i=0;i<5;++i){
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr class="ex">
-                    <th>Mã nhân viên</th>
-                    <th width="auto">Tên Nhân Viên</th>
-                    <th>Mã Quản Lý</th>
-                    <th width="auto">Lịch công tác</th>
-                    <th>ID lịch công tác</th>
+                    <th width="auto">Tên Báo Cáo</th>
+                    <th>Mã Nhân Viên</th>
+                    <th>Chức Vụ</th>
+                    <th width="auto">Tiến độ công việc</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
             </thead>
@@ -223,15 +219,12 @@ for(let i=0;i<5;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-
-                    <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
                 <tr>
@@ -239,67 +232,28 @@ for(let i=0;i<5;++i){
                     <td></td>
                     <td></td>
                     <td></td>
-
-                    <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-
                     <td></td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sữa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -309,12 +263,10 @@ for(let i=0;i<5;++i){
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -324,12 +276,10 @@ for(let i=0;i<5;++i){
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -339,12 +289,10 @@ for(let i=0;i<5;++i){
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -354,12 +302,10 @@ for(let i=0;i<5;++i){
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -369,8 +315,33 @@ for(let i=0;i<5;++i){
                                 aria-hidden="true"></i></a>
                         <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
                                 aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        
                     </td>
                 </tr>
             </tbody>
@@ -493,9 +464,8 @@ for(let i=0;i<5;++i){
                 var row = '<tr>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
                     '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Giới Tính"></td>' +
-                    '<td><input type="text" class="form-control" name="captren" id="captren" value="" placeholder="Nhập Mã Quản Lý"></td>' +
-                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã nhân viên"></td>' +
-                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập ID lịch công tác"></td>' +
+                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã Nhân Viên"></td>' +
+                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
                     '<td>' + actions + '</td>' +
                     '</tr>';
                 $("table").append(row);

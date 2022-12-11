@@ -7,13 +7,13 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Bin-It">
+    <meta name="author" content="Lokey">
     <meta property="og:url" />
-    <meta property="og:type" content="truongbinit" />
-    <meta property="og:title" content="Website TruongBin" />
+    <meta property="og:type" content="lokey" />
+    <meta property="og:title" content="Website lokey" />
     <meta property="og:description" content="Wellcome to my Website" />
 
-    <title>Nhân Viên | Quản Lý Bán Hàng</title>
+    <title>Sự kiện| Quản Lý Bán Hàng</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="fixed.js"></script>
     <script type="text/javascript">
               class Employee{
   constructor(name,gender,birthday,address,position){
@@ -147,28 +147,28 @@ for(let i=0;i<5;++i){
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
+                <a class="navbar-brand" href="#" style="color: #000 !important;"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
                     LÝ NHÂN VIÊN</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
-                        title="QUẢN LÝ">QUẢN LÝ</a></li>
+                        title="NGƯỜI QUẢN LÝ" style="color: #000 !important;">NGƯỜI QUẢN LÝ</a></li>
                     <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
-                        title="NHÂN VIÊN">NHÂN VIÊN</a></li>
+                        title="NHÂN VIÊN" style="color: #000 !important;">NHÂN VIÊN</a></li>
                     <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
-                        title="ĐIỂM DANH">ĐIỂM DANH</a></li>
+                        title="ĐIỂM DANH" style="color: #000 !important;">ĐIỂM DANH</a></li>
                     <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
+                        title="TIỀN LƯƠNG" style="color: #000 !important;">TIỀN LƯƠNG</a></li>
                     <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a></li>
+                        title="CÔNG TÁC" style="color: #000 !important;">CÔNG TÁC</a></li>
                     <li><a href="./baocao.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="BÁO CÁO">BÁO CÁO</a></li>
-                    <li class="active"><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="SỰ KIỆN">SỰ KIỆN</a></li>
+                        title="BÁO CÁO" style="color: #000 !important;">BÁO CÁO</a></li>
+                    <li class="active" ><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
                         <a href="#"  data-toggle="tooltip" data-placement="bottom"
-                        title="TÀI KHOẢN"><b>Tài Khoản</b>
+                        title="TÀI KHOẢN" style="color: #000 !important;"><b>Tài Khoản</b>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
@@ -185,8 +185,8 @@ for(let i=0;i<5;++i){
         <div id="clock"></div>
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên nhân viên cần tìm..."
-            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Nhân Viên">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã sự kiện cần tìm..."
+            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Sự kiện">
         <i class="fa fa-search" aria-hidden="true"></i>
 
         <form action="">
@@ -194,7 +194,7 @@ for(let i=0;i<5;++i){
         </form>
         <b>CHỨC NĂNG CHÍNH:</b><Br>
         <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
+            title="Thêm Sự kiện"><i class="fas fa-user-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
             title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
         <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i

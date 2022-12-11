@@ -7,13 +7,13 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Bin-It">
+    <meta name="author" content="Lokey">
     <meta property="og:url" />
-    <meta property="og:type" content="truongbinit" />
-    <meta property="og:title" content="Website TruongBin" />
+    <meta property="og:type" content="lokey" />
+    <meta property="og:title" content="Website lokey" />
     <meta property="og:description" content="Wellcome to my Website" />
 
-    <title>Nhân Viên | Quản Lý Bán Hàng</title>
+    <title>Điểm danh | Quản Lý Bán Hàng</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="fixed.js"></script>
     <script type="text/javascript">
               class Employee{
   constructor(name,gender,birthday,address,position){
@@ -49,71 +49,20 @@
 
 }
 
-var clickCount = 0;
 
 var lokeyFunction = function(){
-    // ++clickCount;
     var inputElements = document.querySelectorAll('.form-control');
 
     for(let i=0;i<5;++i){
         document.write(`<td> ${inputElements[i]}<\td>`);
     }
-    // if(clickCount>1)clickCount = 0;
-    // if(clickCount%2 == 0)timeBreak('diem-danh-den',clickCount);
-}
-
-var checkInToElements = document.getElementsByClassName('den');
-
-var n = checkInToElements.length;
-
-// alert(checkInToElements);
-
-    // alert(checkInToElements[i]);
-
-for(let i=0;i<n;++i){
-    checkInToElements[i].onclick
+    
 }
 
 function timeBreak(clock){
     swal('Đã lưu thành công giờ');
-    var today = new Date();
-    var weekday = new Array(7);
-    weekday[0] = "Chủ Nhật";
-    weekday[1] = "Thứ Hai";
-    weekday[2] = "Thứ Ba";
-    weekday[3] = "Thứ Tư";
-    weekday[4] = "Thứ Năm";
-    weekday[5] = "Thứ Sáu";
-    weekday[6] = "Thứ Bảy";
-    var day = weekday[today.getDay()];
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    nowTime = h + ":" + m + ":" + s;
-    if (dd < 10) {
-        dd = '0' + dd
-    }
-    if (mm < 10) {
-        mm = '0' + mm
-    }
-    today = day + ', ' + dd + '/' + mm + '/' + yyyy;
-    tmp = '<span class="date">' + today + ' | ' + nowTime +'</span>';
-    // alert(clock);
-    clock.classList.toggle('clock')
-    // document.getElementsByClassName('clock')[0].classList.toggle('clock');
-    // document.getElementsByClassName("clock" onclick = "timeBreak(this);")[1].innerHTML = tmp
-    function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
-    }
-        }
+    clock.classList.toggle('clock');
+}
         //Phân Trang Cho Table
         //<![CDATA[
         function Pager(tableName, itemsPerPage) {
@@ -211,28 +160,28 @@ function timeBreak(clock){
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
+                <a class="navbar-brand" href="#" style="color: #000 !important;"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
                     LÝ NHÂN VIÊN</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
-                        title="QUẢN LÝ">QUẢN LÝ</a></li>
+                        title="NGƯỜI QUẢN LÝ" style="color: #000 !important;">NGƯỜI QUẢN LÝ</a></li>
                     <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
-                        title="NHÂN VIÊN">NHÂN VIÊN</a></li>
-                    <li class="active"><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
-                        title="ĐIỂM DANH">ĐIỂM DANH</a></li>
+                        title="NHÂN VIÊN" style="color: #000 !important;">NHÂN VIÊN</a></li>
+                    <li class="active" style="color: #000 !important;"><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
+                        title="ĐIỂM DANH" style="color: #000 !important;">ĐIỂM DANH</a></li>
                     <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="TIỀN LƯƠNG">TIỀN LƯƠNG</a></li>
+                        title="TIỀN LƯƠNG" style="color: #000 !important;">TIỀN LƯƠNG</a></li>
                     <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="LỊCH CÔNG TÁC">LỊCH CÔNG TÁC</a></li>
+                        title="CÔNG TÁC" style="color: #000 !important;">CÔNG TÁC</a></li>
                     <li><a href="./baocao.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="BÁO CÁO">BÁO CÁO</a></li>
+                        title="BÁO CÁO" style="color: #000 !important;">BÁO CÁO</a></li>
                     <li><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="SỰ KIỆN">SỰ KIỆN</a></li>
+                        title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
                         <a href="#"  data-toggle="tooltip" data-placement="bottom"
-                        title="TÀI KHOẢN"><b>Tài Khoản</b>
+                        title="TÀI KHOẢN" style="color: #000 !important;"><b>Tài Khoản</b>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown">
@@ -249,7 +198,7 @@ function timeBreak(clock){
         <!-- <div id="clock" onclick = "timeBreak(this);"></div> -->
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên nhân viên cần tìm..."
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã nhân viên cần tìm..."
             data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Nhân Viên">
         <i class="fa fa-search" aria-hidden="true"></i>
 
@@ -276,7 +225,7 @@ function timeBreak(clock){
                 <tr class="ex">
                     <th>Mã nhân viên</th>
                     <th width="auto">Tên Nhân Viên</th>
-                    <th>Quản Lý</th>
+                    <th>Mã Quản Lý</th>
                     <th width="auto">Điểm danh đến</th>
                     <th>Điểm danh về</th>
                     <th width="5px; !important">Tính Năng</th>
@@ -563,7 +512,7 @@ function timeBreak(clock){
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="captren" id="captren" placeholder="Nhập Quản Lý"></td>' +
+                    '<td><input type="text" class="form-control" name="captren" id="captren" placeholder="Nhập Mã Quản Lý"></td>' +
                     '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Ngày Sinh"></td>' +
                     '<td><div id = "clock" onclick = "timeBreak(this);"></div></td>' +
                     '<td><div id = "clock" onclick = "timeBreak(this);"></div></td>' +

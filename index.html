@@ -104,13 +104,18 @@
         var password = document.getElementById("password-field").value;
         //Set 1 Admin ảo để đăng nhập quản trị
         if (username == "admin" && password == "1") {
-            swal("Success!", "Bạn Đã Đăng Nhập Với Tư Cách Admin", "success");
+            swal("", "Bạn Đã Đăng Nhập Với Tư Cách Admin", "success");
             window.location = "custommer.html";
             return true;
         }
         if(username == "vietbeo" && password == "iamlokey") {
-            swal("Success!", "Bạn Đã Đăng Nhập Với Tư Cách Quyền Do Admin Cấp", "success");
+            swal("", "Bạn Đã Đăng Nhập Với Tư Cách Quản lý", "success");
             window.location = "custommer.html"
+            return true;
+        }
+        if(username == "employee" && password == "daylatknv") {
+            swal("", "Bạn Đã Đăng Nhập Với Tư Cách Nhân viên", "success");
+            window.location = "customer_nv.html";
             return true;
         }
         //Nếu không nhập gì mà nhấn đăng nhập thì sẽ báo lỗi
