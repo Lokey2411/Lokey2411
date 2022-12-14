@@ -37,7 +37,6 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="fixed_nv.css">
-    <script src="fixed.js"></script>
     <script type="text/javascript">
               class Employee{
   constructor(name,gender,birthday,address,position){
@@ -138,7 +137,11 @@ for(let i=0;i<5;++i){
             window.location = './index.html';
         }
     </script>
-    
+    <style>
+        .dropdown{
+            margin-left: 20px;
+        }
+    </style>
 </head>
 
 <body onload="time()">
@@ -166,10 +169,7 @@ for(let i=0;i<5;++i){
                     <li class="active" ><a href="./sukien_nv.html"  data-toggle="tooltip" data-placement="bottom"
                         title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
-                        <a href="#"  data-toggle="tooltip" data-placement="bottom"
-                        title="TÀI KHOẢN" style="color: #000 !important;"><b>Tài Khoản</b>
-                            <span class="caret"></span>
-                        </a>
+                        
                         <ul class="dropdown">
                             <li><a href="./index.html"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
@@ -220,154 +220,58 @@ for(let i=0;i<5;++i){
             </thead>
             <tbody>
                 <tr>
+                    <td>A01</td>
+                    <td>Lễ Noel</td>
+                    <td>22/12/2022</td>
+                    <td>Đi ăn nhà hàng A</td>
+                    <td>Nhà hàng A</td>
+                    <td>Cả công ty </td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
                 </tr>
                 <tr>
+                    <td>A02</td>
+                    <td>Du lịch nghỉ mát</td>
+                    <td>15/12/2022</td>
+                    <td>Cho toàn công ty đi du lịch nghỉ dưỡng</td>
+                    <td>Sapa</td>
+                    <td>Cả công ty</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
                 </tr>
                 <tr>
+                    <td>A03</td>
+                    <td>Nghỉ Tết dương lịch</td>
+                    <td>01/01/2023-05/01/2023</td>
+                    <td>Nghỉ Tết</td>
                     <td></td>
+                    <td>Toàn bộ nhân viên trong công ty</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sữa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
                 </tr>
                 <tr>
+                    <td>A04</td>
+                    <td>Nghỉ Tết Nguyên Đán</td>
+                    <td>20/01/2023-07/02/2023</td>
+                    <td>Nghỉ Tết</td>
                     <td></td>
+                    <td>Toàn bộ nhân viên trong công ty</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
                 </tr>
                 <tr>
+                    <td>A05</td>
+                    <td>Họp ban quản trị</td>
+                    <td>22/01/2023</td>
+                    <td>Đối thoại giữa ban quản trị và các quản lý</td>
+                    <td>Phòng họp B01</td>
+                    <td>Các Quản lý</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
                 </tr>
                 <tr>
+                    <td>A06</td>
+                    <td>Họp tổng kết năm 2022</td>
+                    <td>23/01/2022</td>
                     <td></td>
+                    <td>Phòng họp B01</td>
+                    <td>Toàn thể nhân sự công ty</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
                 </tr>
             </tbody>
         </table>
@@ -503,11 +407,7 @@ for(let i=0;i<5;++i){
                 var empty = false;
                 var input = $(this).parents("tr").find('input[type="text"]');
                 input.each(function () {
-                    if (!$(this).val()) {
-                        $(this).addClass("error");
-                        swal("Thông Báo!", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
-                        empty = true;
-                    } else {
+                     {
                         $(this).removeClass("error");
                         swal("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "error");
                     }
@@ -557,6 +457,8 @@ for(let i=0;i<5;++i){
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
+        <script src="fixed.js"></script>
+
 </body>
 
 </html>

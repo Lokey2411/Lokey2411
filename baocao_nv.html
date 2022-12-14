@@ -38,7 +38,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="fixed_nv.css">
     
-    <script src="fixed.js"></script>
     <script type="text/javascript">
               class Employee{
   constructor(name,gender,birthday,address,position){
@@ -165,10 +164,7 @@ var lokeyFunction = function(){
                     <li><a href="./sukien_nv.html"  data-toggle="tooltip" data-placement="bottom"
                         title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
-                        <a href="#"  data-toggle="tooltip" data-placement="bottom"
-                        title="TÀI KHOẢN" style="color: #000 !important;"><b>Tài Khoản</b>
-                            <span class="caret"></span>
-                        </a>
+                        
                         <ul class="dropdown">
                             <li><a href="./index.html"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
@@ -208,8 +204,9 @@ var lokeyFunction = function(){
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr class="ex">
-                    <th width="auto">Tên Báo Cáo</th>
+                    <th width="auto">Mã Báo Cáo</th>
                     <th>Mã Nhân Viên</th>
+                    <th>Tên Nhân Viên</th>
                     <th>Chức Vụ</th>
                     <th width="auto">Tiến độ công việc</th>
                     <th width="5px; !important">Tính Năng</th>
@@ -217,10 +214,11 @@ var lokeyFunction = function(){
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC01</td>
+                    <td>NV01</td>
+                    <td>Hà Hải Việt</td>
+                    <td>QL01</td>
+                    <td>Đã hoàn thành tất cả các chức năng</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -230,10 +228,11 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC02</td>
+                    <td>NV02</td>
+                    <td>Nguyễn Việt Anh</td>
+                    <td>QL02</td>
+                    <td>Đã chỉnh sửa thành công lỗi hiển thị</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -243,10 +242,11 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC03</td>
+                    <td>NV03</td>
+                    <td>Trần Quý Đức</td>
+                    <td>QL01</td>
+                    <td>Đã hoàn thành các sơ đồ FFD,DFD,sơ đồ trình tự(SD)</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -256,10 +256,11 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC04</td>
+                    <td>NV04</td>
+                    <td>Nguyễn Thị Thanh Thảo</td>
+                    <td>QL01</td>
+                    <td>Đã hoàn thành các sơ đồ ERD,sơ đồ use-case tổng quát và chi tiết các UC</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -269,10 +270,11 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC05</td>
+                    <td>NV05</td>
+                    <td>Lê Minh Hiếu</td>
+                    <td>QL02</td>
+                    <td>Đã hoàn thành công việc thiết kế kiến trúc và thiết kế sơ đồ quan hệ</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -282,10 +284,11 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC06</td>
+                    <td>NV06</td>
+                    <td>Hà Anh Tú</td>
+                    <td>QL02</td>
+                    <td>Đã xác định các chuẩn NF và thiết kế giao diện người dùng</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -295,10 +298,11 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC07</td>
+                    <td>NV07</td>
+                    <td>Nguyễn Tiến Dũng</td>
+                    <td>QL03</td>
+                    <td>Đã hoàn thành kiểm thử back-end</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -308,36 +312,11 @@ var lokeyFunction = function(){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>BC08</td>
+                    <td>NV08</td>
+                    <td>Nguyễn Quang Hiếu</td>
+                    <td>QL03</td>
+                    <td>Đã hoàn thành kiểm thử front-end</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -533,6 +512,8 @@ var lokeyFunction = function(){
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
+        <script src="fixed.js"></script>
+
 </body>
 
 </html>

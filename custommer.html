@@ -38,16 +38,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="fixed.js"></script>
     <script type="text/javascript">
-              class Employee{
-  constructor(name,gender,birthday,address,position){
-    this.name = name;
-    this.gender = gender;
-    this.birthday = birthday;
-    this.address = address;
-    this.position = position;
-}
+        class Employee{
+            constructor(name,gender,birthday,address,position){
+                this.name = name;
+                this.gender = gender;
+                this.birthday = birthday;
+                this.address = address;
+                this.position = position;
+            }
 
-}
+        Z}
 let parent = document.getElementsByTagName('tr');
 
 
@@ -175,10 +175,12 @@ for(let i=0;i<n;++i){
         var logOut = document.querySelectorAll('b')[1];
         logOut.onclick = function(){
             swal('Đăng xuất thành công!\nTrở về trang chủ');
-            window.location = 'hr_management/index.html';
+            window.location = './index.html';
         }
     </script>
+    <link rel="stylesheet" href="fixed.css">
     <style>
+        
     </style>
 </head>
 
@@ -210,10 +212,7 @@ for(let i=0;i<n;++i){
                     <li><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
                         title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
-                        <a href="#"  data-toggle="tooltip" data-placement="bottom"
-                        title="TÀI KHOẢN"><b>Tài Khoản</b>
-                            <span class="caret"></span>
-                        </a>
+                        
                         <ul class="dropdown">
                             <li><a href="./"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
@@ -236,7 +235,8 @@ for(let i=0;i<n;++i){
 
         </form>
         <b>CHỨC NĂNG CHÍNH:</b><Br>
-        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
+        <div id="function">
+        <button class="nv add-new" type="button" data-toggle="tooltip" data-placement="top"
             title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
             title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
@@ -244,6 +244,7 @@ for(let i=0;i<n;++i){
                 class="fas fa-file-import"></i></button>
         <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
                 class="fas fa-cogs"></i></button>
+                </div>
         <div class="table-title">
             <div class="row">
 
@@ -263,12 +264,11 @@ for(let i=0;i<n;++i){
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td>NV01</td>
+                    <td>Hà Hải Việt</td>
+                    <td>QL01</td>
+                    <td>ĐV001</td>
+                    <td>Quản lý</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -279,12 +279,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td>NV02</td>
+                    <td>Nguyễn Việt Anh</td>
+                    <td>QL02</td>
+                    <td>ĐV002</td>
+                    <td>Quản lý</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -295,12 +294,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td>NV03</td>
+                    <td>Trần Quý Đức</td>
+                    <td>QL01</td>
+                    <td>ĐV001</td>
+                    <td>Nhân Viên</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -311,12 +309,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td>NV04</td>
+                    <td>Nguyễn Thị Thanh Thảo</td>
+                    <td>QL01</td>
+                    <td>ĐV001</td>
+                    <td>Nhân Viên</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -327,12 +324,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                    <td></td>
+                    <td>NV05</td>
+                    <td>Lê Minh Hiếu</td>
+                    <td>QL02</td>
+                    <td>ĐV002</td>
+                    <td>Nhân Viên</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -343,11 +339,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>NV06</td>
+                    <td>Hà Anh Tú</td>
+                    <td>QL02</td>
+                    <td>ĐV002</td>
+                    <td>Nhân Viên</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -358,11 +354,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>NV07</td>
+                    <td>Nguyễn Tiến Dũng</td>
+                    <td>QL03</td>
+                    <td>ĐV003</td>
+                    <td>Quản lý</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -373,11 +369,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>NV08</td>
+                    <td>Nguyễn Quang Hiếu</td>
+                    <td>QL03</td>
+                    <td>ĐV003</td>
+                    <td>Nhân Viên</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -387,37 +383,6 @@ for(let i=0;i<n;++i){
                                 aria-hidden="true"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></a>
-                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
-                                aria-hidden="true"></i></a>
-                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
-                                aria-hidden="true"></i></a>
-                    </td>
-                </tr>
-            </tbody>
         </table>
                 <div id="pageNavPosition" class="text-right"></div>
                 <script type="text/javascript">
@@ -426,7 +391,7 @@ for(let i=0;i<n;++i){
                     pager.showPageNav('pager', 'pageNavPosition');
                     pager.showPage(1);
                 </script>
-            </div>
+                </div>
     <hr class="hr1">
     <div class="container-fluid end">
         <div class="row text-center">

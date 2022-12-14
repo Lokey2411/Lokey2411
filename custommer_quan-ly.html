@@ -13,12 +13,11 @@
     <meta property="og:title" content="Website lokey" />
     <meta property="og:description" content="Wellcome to my Website" />
 
-    <title>Quản Lý | Quản Lý Bán Hàng</title>
+    <title>Nhân Viên | Quản Lý Bán Hàng</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="fixed.css">
     <!-- Latest compiled and minified CSS -->
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -38,16 +37,16 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript">
-              class Employee{
-  constructor(name,gender,birthday,address,position){
-    this.name = name;
-    this.gender = gender;
-    this.birthday = birthday;
-    this.address = address;
-    this.position = position;
-}
+        class Employee{
+            constructor(name,gender,birthday,address,position){
+                this.name = name;
+                this.gender = gender;
+                this.birthday = birthday;
+                this.address = address;
+                this.position = position;
+            }
 
-}
+        Z}
 let parent = document.getElementsByTagName('tr');
 
 
@@ -58,12 +57,40 @@ let parent = document.getElementsByTagName('tr');
 
 var lokeyFunction = function(){
     var inputElements = document.querySelectorAll('.form-control');
+    // let file = "custommer.txt";
     for(let i=0;i<5;++i){
         document.write(`<td> ${inputElements[i]}<\td>`);
         parent[i+1].outerHTML = `<td> ${inputElements[i]}<\td>`;    
     }
 
 }
+
+// function writeTextFile(inputTextToSave,inputFileNameToSaveAs)
+// {
+//     // var textToWrite = document.getElementById(inputTextToSave).value;
+//     var textFileAsBlob = new Blob([inputTextToSave], {type:'text/plain'});
+//     // var fileNameToSaveAs = document.getElementById(inputFileNameToSaveAs).value;
+//       var downloadLink = document.createElement("a");
+//     downloadLink.download = inputFileNameToSaveAs;
+//     downloadLink.innerHTML = "Download File";
+//     if (window.webkitURL != null)
+//     {
+//         // Chrome allows the link to be clicked
+//         // without actually adding it to the DOM.
+//         downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+//     }
+//     else
+//     {
+//         // Firefox requires the link to be added to the DOM
+//         // before it can be clicked.
+//         downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+//         downloadLink.onclick = destroyClickedElement;
+//         downloadLink.style.display = "none";
+//         document.body.appendChild(downloadLink);
+//     }
+ 
+//     downloadLink.click();
+// }
 
 var save = document.querySelectorAll('.fa-floppy-o');
 
@@ -147,10 +174,10 @@ for(let i=0;i<n;++i){
         var logOut = document.querySelectorAll('b')[1];
         logOut.onclick = function(){
             swal('Đăng xuất thành công!\nTrở về trang chủ');
-            window.location = './';
+            window.location = 'hr_management/index.html';
         }
     </script>
-    
+    <link rel="stylesheet" href="fixed.css">
 </head>
 
 <body onload="time()">
@@ -160,29 +187,30 @@ for(let i=0;i<n;++i){
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#" style="color: #000 !important;"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN
+                <a class="navbar-brand" href="#"style="color: #000 !important;"><i class="fa fa-user-circle" aria-hidden="true" ></i> QUẢN
                     LÝ NHÂN VIÊN</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class = "active"><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./manager_quan-ly.html" data-toggle="tooltip" data-placement="bottom"
                         title="NGƯỜI QUẢN LÝ" style="color: #000 !important;">NGƯỜI QUẢN LÝ</a></li>
-                    <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
-                        title="NHÂN VIÊN"style="color: #000 !important;">NHÂN VIÊN</a></li>
-                    <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
-                        title="ĐIỂM DANH"style="color: #000 !important;">ĐIỂM DANH</a></li>
-                    <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="TIỀN LƯƠNG"style="color: #000 !important;">TIỀN LƯƠNG</a></li>
-                    <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="CÔNG TÁC"style="color: #000 !important;">CÔNG TÁC</a></li>
-                    <li><a href="./baocao.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="BÁO CÁO"style="color: #000 !important;">BÁO CÁO</a></li>
-                    <li><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="SỰ KIỆN"style="color: #000 !important;">SỰ KIỆN</a></li>
+                    <li class="active"><a href="./custommer_quan-ly.html" data-toggle="tooltip" data-placement="bottom"
+                        title="NHÂN VIÊN" style="color: #000 !important;">NHÂN VIÊN</a></li>
+                    <li><a href="./diem_danh_quan-ly.html" data-toggle="tooltip" data-placement="bottom"
+                        title="ĐIỂM DANH" style="color: #000 !important;">ĐIỂM DANH</a></li>
+                    <li><a href="./luong_quan-ly.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="TIỀN LƯƠNG" style="color: #000 !important;">TIỀN LƯƠNG</a></li>
+                    <li><a href="./lich_quan-ly.html"  data-toggle="tooltip" data-placement="bottom" 
+                        title="CÔNG TÁC" style="color: #000 !important;">
+                        CÔNG TÁC</a></li>
+                    <li><a href="./baocao_quan-ly.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="BÁO CÁO" style="color: #000 !important;">BÁO CÁO</a></li>
+                    <li><a href="./sukien_quan-ly.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
                         
                         <ul class="dropdown">
-                            <li><a href="./index.html"  data-toggle="tooltip" data-placement="bottom"
+                            <li><a href="./"  data-toggle="tooltip" data-placement="bottom"
                                 title="ĐĂNG XUẤT"><b>Đăng xuất <i class="fas fa-sign-out-alt"></i></b></a></li>
                         </ul>
                     </li>
@@ -195,7 +223,7 @@ for(let i=0;i<n;++i){
         <div id="clock"></div>
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã quản lý cần tìm..."
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã nhân viên cần tìm..."
             data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Nhân Viên">
         <i class="fa fa-search" aria-hidden="true"></i>
 
@@ -220,19 +248,21 @@ for(let i=0;i<n;++i){
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr class="ex">
-                    <th>Mã quản lý</th>
-                    <th width="auto">Tên</th>
+                    <th>Mã nhân viên</th>
+                    <th width="auto">Tên Nhân Viên</th>
+                    <th width="auto">Mã Quản lý</th>
+                    <th>Đơn vị</th>
                     <th>Chức Vụ</th>
-                    <th width="auto">Đơn vị Quản lý</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>QL01</td>
+                    <td>NV01</td>
                     <td>Hà Hải Việt</td>
-                    <td>Quản Lý</td>
+                    <td>QL01</td>
                     <td>ĐV001</td>
+                    <td>Quản lý</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -243,10 +273,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td>QL02</td>
+                    <td>NV02</td>
                     <td>Nguyễn Việt Anh</td>
-                    <td>Quản Lý</td>
+                    <td>QL02</td>
                     <td>ĐV002</td>
+                    <td>Quản lý</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -257,10 +288,11 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td>QL03</td>
-                    <td>Nguyễn Tiến Dũng</td>
-                    <td>Quản Lý</td>
-                    <td>ĐV003</td>
+                    <td>NV03</td>
+                    <td>Trần Quý Đức</td>
+                    <td>QL01</td>
+                    <td>ĐV001</td>
+                    <td>Nhân Viên</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -271,27 +303,80 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    
+                    <td>NV04</td>
+                    <td>Nguyễn Thị Thanh Thảo</td>
+                    <td>QL01</td>
+                    <td>ĐV001</td>
+                    <td>Nhân Viên</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                    
+                    <td>NV05</td>
+                    <td>Lê Minh Hiếu</td>
+                    <td>QL02</td>
+                    <td>ĐV002</td>
+                    <td>Nhân Viên</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                    
+                    <td>NV06</td>
+                    <td>Hà Anh Tú</td>
+                    <td>QL02</td>
+                    <td>ĐV002</td>
+                    <td>Nhân Viên</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                    
+                    <td>NV07</td>
+                    <td>Nguyễn Tiến Dũng</td>
+                    <td>QL03</td>
+                    <td>ĐV003</td>
+                    <td>Quản lý</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                    
+                    <td>NV08</td>
+                    <td>Nguyễn Quang Hiếu</td>
+                    <td>QL03</td>
+                    <td>ĐV003</td>
+                    <td>Nhân Viên</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
-                <tr>
-                    
-                </tr>
-                <tr>
-                    
-                </tr>
-            </tbody>
         </table>
                 <div id="pageNavPosition" class="text-right"></div>
                 <script type="text/javascript">
@@ -300,7 +385,7 @@ for(let i=0;i<n;++i){
                     pager.showPageNav('pager', 'pageNavPosition');
                     pager.showPage(1);
                 </script>
-            </div>
+                </div>
     <hr class="hr1">
     <div class="container-fluid end">
         <div class="row text-center">
@@ -409,10 +494,11 @@ for(let i=0;i<n;++i){
                 $(this).attr("disabled", "disabled");
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
-                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã quản lý"></td>' +
+                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã nhân viên"></td>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
+                    '<td><input type="text" class="form-control" name="captrn" id="gioitinh" placeholder="Nhập Mã Quản lý"></td>' +
+                    '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Đơn vị"></td>' +
                     '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
-                    '<td><input type="text" class="form-control" name="captrn" id="gioitinh" placeholder="Nhập Đơn vị"></td>' +
                     '<td>' + actions + '</td>' +
                     '</tr>';
                 $("table").append(row);
@@ -478,7 +564,7 @@ for(let i=0;i<n;++i){
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-        <script src="fixed.js"></script>
+    <script src="fixed.js"></script>
 
 </body>
 

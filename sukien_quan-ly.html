@@ -13,12 +13,11 @@
     <meta property="og:title" content="Website lokey" />
     <meta property="og:description" content="Wellcome to my Website" />
 
-    <title>Quản Lý | Quản Lý Bán Hàng</title>
+    <title>Sự kiện| Quản Lý Bán Hàng</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="fixed.css">
     <!-- Latest compiled and minified CSS -->
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -37,6 +36,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fixed.css">
+    
     <script type="text/javascript">
               class Employee{
   constructor(name,gender,birthday,address,position){
@@ -48,31 +49,18 @@
 }
 
 }
-let parent = document.getElementsByTagName('tr');
 
-
-// parent = Object.values(parent); 
-
-// let k = parent.shift();
-
-
+var empList = new Array();
 var lokeyFunction = function(){
     var inputElements = document.querySelectorAll('.form-control');
-    for(let i=0;i<5;++i){
-        document.write(`<td> ${inputElements[i]}<\td>`);
-        parent[i+1].outerHTML = `<td> ${inputElements[i]}<\td>`;    
-    }
+
+for(let i=0;i<5;++i){
+    document.write(`<td> ${inputElements[i]}<\td>`);
+}
 
 }
 
-var save = document.querySelectorAll('.fa-floppy-o');
 
-var n = save.length;
-for(let i=0;i<n;++i){
-    save[i].onclick = lokeyFunction;
-}
-
-// $(document).on('click','.add',lokeyFunction);
         //Phân Trang Cho Table
         //<![CDATA[
         function Pager(tableName, itemsPerPage) {
@@ -144,12 +132,20 @@ for(let i=0;i<n;++i){
             }
         }
         //]]>
-        var logOut = document.querySelectorAll('b')[1];
+        var logOut = document.querySelectorAll('b')[0];
         logOut.onclick = function(){
             swal('Đăng xuất thành công!\nTrở về trang chủ');
-            window.location = './';
+            setTimeout(function(){
+                window.location = './';
+            },6000);
         }
     </script>
+    <style>
+        .dropdown{
+            margin-left: 20px;
+            color:#000;
+        }
+    </style>
     
 </head>
 
@@ -165,20 +161,20 @@ for(let i=0;i<n;++i){
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class = "active"><a href="./manager.html" data-toggle="tooltip" data-placement="bottom"
+                    <li><a href="./manager_quan-ly.html" data-toggle="tooltip" data-placement="bottom"
                         title="NGƯỜI QUẢN LÝ" style="color: #000 !important;">NGƯỜI QUẢN LÝ</a></li>
-                    <li><a href="./custommer.html" data-toggle="tooltip" data-placement="bottom"
-                        title="NHÂN VIÊN"style="color: #000 !important;">NHÂN VIÊN</a></li>
-                    <li><a href="./diem_danh.html" data-toggle="tooltip" data-placement="bottom"
-                        title="ĐIỂM DANH"style="color: #000 !important;">ĐIỂM DANH</a></li>
-                    <li><a href="./luong.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="TIỀN LƯƠNG"style="color: #000 !important;">TIỀN LƯƠNG</a></li>
-                    <li><a href="./lich.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="CÔNG TÁC"style="color: #000 !important;">CÔNG TÁC</a></li>
-                    <li><a href="./baocao.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="BÁO CÁO"style="color: #000 !important;">BÁO CÁO</a></li>
-                    <li><a href="./sukien.html"  data-toggle="tooltip" data-placement="bottom"
-                        title="SỰ KIỆN"style="color: #000 !important;">SỰ KIỆN</a></li>
+                    <li><a href="./custommer_quan-ly.html" data-toggle="tooltip" data-placement="bottom"
+                        title="NHÂN VIÊN" style="color: #000 !important;">NHÂN VIÊN</a></li>
+                    <li><a href="./diem_danh_quan-ly.html" data-toggle="tooltip" data-placement="bottom"
+                        title="ĐIỂM DANH" style="color: #000 !important;">ĐIỂM DANH</a></li>
+                    <li><a href="./luong_quan-ly.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="TIỀN LƯƠNG" style="color: #000 !important;">TIỀN LƯƠNG</a></li>
+                    <li><a href="./lich_quan-ly.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="CÔNG TÁC" style="color: #000 !important;">CÔNG TÁC</a></li>
+                    <li><a href="./baocao_quan-ly.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="BÁO CÁO" style="color: #000 !important;">BÁO CÁO</a></li>
+                    <li class="active" ><a href="./sukien_quan-ly.html"  data-toggle="tooltip" data-placement="bottom"
+                        title="SỰ KIỆN" style="color: #000 !important;">SỰ KIỆN</a></li>
                     <li>
                         
                         <ul class="dropdown">
@@ -195,8 +191,8 @@ for(let i=0;i<n;++i){
         <div id="clock"></div>
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã quản lý cần tìm..."
-            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Nhân Viên">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã sự kiện cần tìm..."
+            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Sự kiện">
         <i class="fa fa-search" aria-hidden="true"></i>
 
         <form action="">
@@ -204,7 +200,7 @@ for(let i=0;i<n;++i){
         </form>
         <b>CHỨC NĂNG CHÍNH:</b><Br>
         <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
+            title="Thêm Sự kiện"><i class="fas fa-user-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
             title="Lọc Dữ Liệu"><i class="fa fa-filter" aria-hidden="true"></i></button>
         <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
@@ -220,19 +216,23 @@ for(let i=0;i<n;++i){
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr class="ex">
-                    <th>Mã quản lý</th>
-                    <th width="auto">Tên</th>
-                    <th>Chức Vụ</th>
-                    <th width="auto">Đơn vị Quản lý</th>
+                    <th>Mã sự kiện</th>
+                    <th width="auto">Tên sự kiện</th>
+                    <th width="auto">Thời gian diễn ra</th>
+                    <th>Chi tiết sự kiện</th>
+                    <th>Địa điểm tổ chức</th>
+                    <th>Người tham gia</th>
                     <th width="5px; !important">Tính Năng</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>QL01</td>
-                    <td>Hà Hải Việt</td>
-                    <td>Quản Lý</td>
-                    <td>ĐV001</td>
+                    <td>A01</td>
+                    <td>Lễ Noel</td>
+                    <td>22/12/2022</td>
+                    <td>Đi ăn nhà hàng A</td>
+                    <td>Nhà hàng A</td>
+                    <td>Cả công ty </td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -243,10 +243,12 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td>QL02</td>
-                    <td>Nguyễn Việt Anh</td>
-                    <td>Quản Lý</td>
-                    <td>ĐV002</td>
+                    <td>A02</td>
+                    <td>Du lịch nghỉ mát</td>
+                    <td>15/12/2022</td>
+                    <td>Cho toàn công ty đi du lịch nghỉ dưỡng</td>
+                    <td>Sapa</td>
+                    <td>Cả công ty</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -257,10 +259,12 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    <td>QL03</td>
-                    <td>Nguyễn Tiến Dũng</td>
-                    <td>Quản Lý</td>
-                    <td>ĐV003</td>
+                    <td>A03</td>
+                    <td>Nghỉ Tết dương lịch</td>
+                    <td>01/01/2023-05/01/2023</td>
+                    <td>Nghỉ Tết</td>
+                    <td></td>
+                    <td>Toàn bộ nhân viên trong công ty</td>
                     <td>
                         <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a>
@@ -271,25 +275,52 @@ for(let i=0;i<n;++i){
                     </td>
                 </tr>
                 <tr>
-                    
+                    <td>A04</td>
+                    <td>Nghỉ Tết Nguyên Đán</td>
+                    <td>20/01/2023-07/02/2023</td>
+                    <td>Nghỉ Tết</td>
+                    <td></td>
+                    <td>Toàn bộ nhân viên trong công ty</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                    
+                    <td>A05</td>
+                    <td>Họp ban quản trị</td>
+                    <td>22/01/2023</td>
+                    <td>Đối thoại giữa ban quản trị và các quản lý</td>
+                    <td>Phòng họp B01</td>
+                    <td>Các Quản lý</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                    
-                </tr>
-                <tr>
-                    
-                </tr>
-                <tr>
-                    
-                </tr>
-                <tr>
-                    
-                </tr>
-                <tr>
-                    
+                    <td>A06</td>
+                    <td>Họp tổng kết năm 2022</td>
+                    <td>23/01/2022</td>
+                    <td></td>
+                    <td>Phòng họp B01</td>
+                    <td>Toàn thể nhân sự công ty</td>
+                    <td>
+                        <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
+                                aria-hidden="true"></i></a>
+                        <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-pencil"
+                                aria-hidden="true"></i></a>
+                        <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-trash-o"
+                                aria-hidden="true"></i></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -355,7 +386,7 @@ for(let i=0;i<n;++i){
                 if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
-                    swal("", "Bạn Đã Lọc thành công", "success");
+                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
                 }
             }
         }
@@ -409,10 +440,12 @@ for(let i=0;i<n;++i){
                 $(this).attr("disabled", "disabled");
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
-                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã quản lý"></td>' +
-                    '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
-                    '<td><input type="text" class="form-control" name="captrn" id="gioitinh" placeholder="Nhập Đơn vị"></td>' +
+                    '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Mã sự kiện"></td>' +
+                    '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Tên sự kiện"></td>' +
+                    '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Thời gian diễn ra"></td>' +
+                    '<td><input type="text" class="form-control" name="diachi" id="diachi" value="" placeholder="Nhập Chi tiết sự kiện"></td>' +
+                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Địa điểm tổ chức"></td>' +
+                    '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Người tham gia"></td>' +
                     '<td>' + actions + '</td>' +
                     '</tr>';
                 $("table").append(row);
@@ -424,20 +457,16 @@ for(let i=0;i<n;++i){
                 var empty = false;
                 var input = $(this).parents("tr").find('input[type="text"]');
                 input.each(function () {
-                    if (!$(this).val()) {
-                        $(this).addClass("error");
-                        swal("", "Dữ Liệu Trống Vui Lòng Kiểm Tra", "error");
-                        empty = true;
-                    } else {
+                     {
                         $(this).removeClass("error");
-                        swal("", "Bạn Chưa Nhập Dữ Liệu", "error");
+                        swal("Thông Báo!", "Bạn Chưa Nhập Dữ Liệu", "error");
                     }
                 });
                 $(this).parents("tr").find(".error").first().focus();
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Success!", "Bạn Đã Cập Nhật Thành công", "success");
+                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");
@@ -455,13 +484,13 @@ for(let i=0;i<n;++i){
             });
             jQuery(function () {
                 jQuery(".add").click(function () {
-                    swal("Success!", "Bạn Đã Sửa Thành công", "success");
+                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
                 });
             });
             // Delete Hàng
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();
-                swal("Success!", "Bạn Đã Xóa Thành công", "success");
+                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });

@@ -110,7 +110,7 @@
         }
         if(username == "manager01@test.ru" && password == "manager01") {
             swal("", "Bạn Đã Đăng Nhập Với Tư Cách Quản lý", "success");
-            window.location = "custommer.html"
+            window.location = "custommer_quan-ly.html"
             return true;
         }
         if(username == "employee99@test.ru" && password == "employee99") {
@@ -139,10 +139,10 @@
             return false;
         }
         //Nếu mật khẩu trên 8 ký tự thì sẽ báo lỗi
-        if (password.length > 9) {
-            swal("Bạn Nhập Dư Mật Khẩu", "Vui Lòng Kiểm Tra Lại Mật Khẩu", "error");
-            return false;
-        }
+        // if (password.length > 9) {
+        //     swal("Bạn Nhập Dư Mật Khẩu", "Vui Lòng Kiểm Tra Lại Mật Khẩu", "error");
+        //     return false;
+        // }
         swal("Account Invalid", "Vui Lòng Kiểm Tra Hoặc Nhấn Quên Mật Khẩu", "error");
     }
 
