@@ -38,39 +38,31 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript">
-              class Employee{
-  constructor(name,gender,birthday,address,position){
-    this.name = name;
-    this.gender = gender;
-    this.birthday = birthday;
-    this.address = address;
-    this.position = position;
-}
 
-}
-let parent = document.getElementsByTagName('tr');
+  
+        let parent = document.getElementsByTagName('tr');
 
 
-// parent = Object.values(parent); 
+        // parent = Object.values(parent); 
 
-// let k = parent.shift();
+        // let k = parent.shift();
 
 
-var lokeyFunction = function(){
-    var inputElements = document.querySelectorAll('.form-control');
-    for(let i=0;i<5;++i){
-        document.write(`<td> ${inputElements[i]}<\td>`);
-        parent[i+1].outerHTML = `<td> ${inputElements[i]}<\td>`;    
-    }
+        var lokeyFunction = function(){
+            var inputElements = document.querySelectorAll('.form-control');
+            for(let i=0;i<5;++i){
+                document.write(`<td> ${inputElements[i]}<\td>`);
+                parent[i+1].outerHTML = `<td> ${inputElements[i]}<\td>`;    
+            }
 
-}
+        }
 
-var save = document.querySelectorAll('.fa-floppy-o');
+        var save = document.querySelectorAll('.fa-floppy-o');
 
-var n = save.length;
-for(let i=0;i<n;++i){
-    save[i].onclick = lokeyFunction;
-}
+        var n = save.length;
+        for(let i=0;i<n;++i){
+            save[i].onclick = lokeyFunction;
+        }
 
 // $(document).on('click','.add',lokeyFunction);
         //Phân Trang Cho Table
@@ -433,6 +425,8 @@ for(let i=0;i<n;++i){
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
+        document.getElementsByClassName('fa-filter')[0].parentElement.style.display = 'none';
+
     </script>
         <script src="fixed.js"></script>
 

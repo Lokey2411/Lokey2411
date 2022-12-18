@@ -150,7 +150,8 @@ for(let i=0;i<n;++i){
             window.location = './';
         }
     </script>
-    
+    <style>
+    </style>
 </head>
 
 <body onload="time()">
@@ -206,7 +207,7 @@ for(let i=0;i<n;++i){
         <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
             title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
-            title="Sắp xếp danh sách quản lý"><i class="fa fa-filter" aria-hidden="true"></i></button>
+            title="Sắp xếp danh sách quản lý "><i class="fa fa-filter" aria-hidden="true"></i></button>
         <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
                 class="fas fa-file-import"></i></button>
         <button class="nv cog" data-toggle="tooltip" data-placement="bottom" title=""><i
@@ -437,7 +438,7 @@ for(let i=0;i<n;++i){
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Success!", "Bạn Đã Cập Nhật Thành công", "success");
+                        swal("", "Bạn Đã Cập Nhật Thành công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");
@@ -455,13 +456,13 @@ for(let i=0;i<n;++i){
             });
             jQuery(function () {
                 jQuery(".add").click(function () {
-                    swal("Success!", "Bạn Đã Sửa Thành công", "success");
+                    swal("", "Bạn Đã Sửa Thành công", "success");
                 });
             });
             // Delete Hàng
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();
-                swal("Success!", "Bạn Đã Xóa Thành công", "success");
+                swal("", "Bạn Đã Xóa Thành công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });

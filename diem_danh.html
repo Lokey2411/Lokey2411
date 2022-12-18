@@ -414,7 +414,7 @@ function timeBreak(clock){
                 if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
-                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
+                    swal("", "Bạn Đã Lọc Thành Công", "success");
                 }
             }
         }
@@ -525,13 +525,13 @@ function timeBreak(clock){
             });
             jQuery(function () {
                 jQuery(".add").click(function () {
-                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
+                    swal("", "Bạn Đã Sửa Thành Công", "success");
                 });
             });
             // Delete Hàng
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();
-                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
+                swal("", "Bạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });

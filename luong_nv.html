@@ -205,7 +205,6 @@ var empList = new Array();
                 <tr class="ex">
                     <th>Mã Nhân Viên</th>
                     <th width="auto">Tên Nhân Viên</th>
-                    <th>Mã Quản Lý</th>
                     <th>Chức Vụ</th>
                     <th width="auto">Lương tháng</th>
                     <th width="5px; !important">Tính Năng</th>
@@ -215,7 +214,6 @@ var empList = new Array();
                 <tr>
                     <td>NV01</td>
                     <td>Hà Hải Việt</td>
-                    <td>QL01</td>
                     <td>Quản lý</td>
                     <td>39,000,000</td>
                     <td></td>
@@ -223,7 +221,6 @@ var empList = new Array();
                 <tr>
                     <td>NV02</td>
                     <td>Nguyễn Việt Anh</td>
-                    <td>QL02</td>
                     <td>Quản lý</td>
                     <td>40,000,000</td>
                     <td></td>
@@ -231,7 +228,6 @@ var empList = new Array();
                 <tr>
                     <td>NV03</td>
                     <td>Trần Quý Đức</td>
-                    <td>QL01</td>
                     <td>Nhân Viên</td>
                     <td>18,000,000</td>
                     <td></td>
@@ -239,7 +235,6 @@ var empList = new Array();
                 <tr>
                     <td>NV04</td>
                     <td>Nguyễn Thị Thanh Thảo</td>
-                    <td>QL01</td>
                     <td>Nhân Viên</td>
                     <td>6,000,000</td>
                     <td></td>
@@ -247,7 +242,6 @@ var empList = new Array();
                 <tr>
                     <td>NV05</td>
                     <td>Lê Minh Hiếu</td>
-                    <td>QL02</td>
                     <td>Nhân Viên</td>
                     <td>14,000,000</td>
                     <td></td>
@@ -255,7 +249,6 @@ var empList = new Array();
                 <tr>
                     <td>NV06</td>
                     <td>Hà Anh Tú</td>
-                    <td>QL02</td>
                     <td>Nhân Viên</td>
                     <td>16,000,000</td>
                     <td></td>
@@ -263,7 +256,6 @@ var empList = new Array();
                 <tr>
                     <td>NV07</td>
                     <td>Nguyễn Tiến Dũng</td>
-                    <td>QL03</td>
                     <td>Quản lý</td>
                     <td>37,000,000</td>
                     <td></td>
@@ -271,7 +263,6 @@ var empList = new Array();
                 <tr>
                     <td>NV08</td>
                     <td>Nguyễn Quang Hiếu</td>
-                    <td>QL03</td>
                     <td>Nhân Viên</td>
                     <td>5,000,000</td>
                     <td></td>
@@ -340,7 +331,7 @@ var empList = new Array();
                 if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
-                    swal("Thành Công!", "Bạn Đã Lọc Thành Công", "success");
+                    swal("", "Bạn Đã Lọc Thành Công", "success");
                 }
             }
         }
@@ -442,13 +433,13 @@ var empList = new Array();
             });
             jQuery(function () {
                 jQuery(".add").click(function () {
-                    swal("Thành Công!", "Bạn Đã Sửa Thành Công", "success");
+                    swal("", "Bạn Đã Sửa Thành Công", "success");
                 });
             });
             // Delete Hàng
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();
-                swal("Thành Công!", "Bạn Đã Xóa Thành Công", "success");
+                swal("", "Bạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });
@@ -466,7 +457,7 @@ var empList = new Array();
         });
     </script>
         <script src="fixed.js"></script>
-
+    <script src="fixed_nv.js"></script>
 </body>
 
 </html>
