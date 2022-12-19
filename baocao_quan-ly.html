@@ -454,8 +454,8 @@ var lokeyFunction = function(){
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Mã báo cáo"></td>' +
-                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Tên Nhân Viên"></td>' +
                     '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã Nhân Viên"></td>' +
+                    '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Tên Nhân Viên"></td>' +
                     '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
                     '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Tiến độ công việc"></td>' +
                     '<td>' + actions + '</td>' +
@@ -482,7 +482,7 @@ var lokeyFunction = function(){
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+                        swal("\n", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");

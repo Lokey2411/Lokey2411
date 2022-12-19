@@ -56,6 +56,6 @@ $(document).ready(function () {
 
 jQuery(function () {
     jQuery(".cog").click(function () {
-        swal("Sorry!", "Tính Năng Này Chưa Có", "error");
+        swal("Xin lỗi!", "Tính Năng Này Chưa Có", "error");
     });
 });

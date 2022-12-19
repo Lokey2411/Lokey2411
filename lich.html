@@ -180,9 +180,9 @@ for(let i=0;i<5;++i){
     <div class="container-fluid al">    
         <div id="clock"></div>
         <Br>
-        <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
+        <p class="timkiemnhanvien"><b>TÌM KIẾM LỊCH CÔNG TÁC:</b></p><Br><Br>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã nhân viên cần tìm..."
-            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Nhân Viên">
+            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Lịch công tác">
         <i class="fa fa-search" aria-hidden="true"></i>
 
         <form action="">
@@ -190,7 +190,7 @@ for(let i=0;i<5;++i){
         </form>
         <b>CHỨC NĂNG CHÍNH:</b><Br>
         <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
-            title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
+            title="Thêm Lịch công tác"><i class="fas fa-user-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
             title="Sắp xếp danh sách nhân viên"><i class="fa fa-filter" aria-hidden="true"></i></button>
         <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
@@ -208,7 +208,6 @@ for(let i=0;i<5;++i){
                 <tr class="ex">
                     <th>Mã nhân viên</th>
                     <th width="auto">Tên Nhân Viên</th>
-                    <th>Mã Quản Lý</th>
                     <th width="auto">Lịch công tác</th>
                     <th>ID lịch công tác</th>
                     <th width="5px; !important">Tính Năng</th>
@@ -218,7 +217,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV01</td>
                     <td>Hà Hải Việt</td>
-                    <td>QL01</td>
                     <td>8-17h Thứ 2,Thứ 4,Thứ 6 hàng tuần,</td>
                     <td>A11</td>
                     <td>
@@ -233,7 +231,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV02</td>
                     <td>Nguyễn Việt Anh</td>
-                    <td>QL02</td>
                     <td>8-17h Thứ 3,Thứ 5,Thứ 7 hàng tuần</td>
                     <td>A22</td>
                     <td>
@@ -248,7 +245,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV03</td>
                     <td>Trần Quý Đức</td>
-                    <td>QL01</td>
                     <td>8-17h Thứ 2,Thứ 4,Thứ 6 hàng tuần,</td>
                     <td>A33</td>
                     <td>
@@ -263,7 +259,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV04</td>
                     <td>Nguyễn Thị Thanh Thảo</td>
-                    <td>QL01</td>
                     <td>8-17h Thứ 2,Thứ 4,Thứ 6 hàng tuần,</td>
                     <td>A88</td>
                     <td>
@@ -278,7 +273,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV05</td>
                     <td>Lê Minh Hiếu</td>
-                    <td>QL02</td>
                     <td>8-17h Thứ 3,Thứ 5,Thứ 7 hàng tuần</td>
                     <td>A44</td>
                     <td>
@@ -293,7 +287,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV06</td>
                     <td>Hà Anh Tú</td>
-                    <td>QL02</td>
                     <td>8-17h Thứ 3,Thứ 5,Thứ 7 hàng tuần</td>
                     <td>A55</td>
                     <td>
@@ -308,7 +301,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV07</td>
                     <td>Nguyễn Tiến Dũng</td>
-                    <td>QL03</td>
                     <td>8-11h Thứ 2,Thứ 4,Thứ 6;13h30-17h Thứ 3,Thứ 5, Thứ 7 hàng tuần</td>
                     <td>A66</td>
                     <td>
@@ -323,7 +315,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV08</td>
                     <td>Nguyễn Quang Hiếu</td>
-                    <td>QL03</td>
                     <td>8-11h Thứ 2,Thứ 4,Thứ 6;13h30-17h Thứ 3,Thứ 5, Thứ 7 hàng tuần</td>
                     <td>A77</td>
                     <td>
@@ -455,7 +446,6 @@ for(let i=0;i<5;++i){
                 var row = '<tr>' +
                     '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã nhân viên"></td>' +
                     '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-                    '<td><input type="text" class="form-control" name="captren" id="captren" value="" placeholder="Nhập Mã Quản Lý"></td>' +
                     '<td><input type="text" class="form-control" name="gioitinh" id="gioitinh" placeholder="Nhập Lịch công tác"></td>' +
                     '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập ID lịch công tác"></td>' +
                     '<td>' + actions + '</td>' +
@@ -482,7 +472,7 @@ for(let i=0;i<5;++i){
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+                        swal("\n", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");

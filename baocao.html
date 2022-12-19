@@ -182,7 +182,7 @@ var lokeyFunction = function(){
         <Br>
         <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã nhân viên cần tìm..."
-            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Nhân Viên">
+            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Báo cáo">
         <i class="fa fa-search" aria-hidden="true"></i>
 
         <form action="">
@@ -399,7 +399,7 @@ var lokeyFunction = function(){
                 if (shouldSwitch) {
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
-                    swal("", "Bạn Đã Lọc Thành Công", "success");
+                    swal("", "\nBạn Đã Lọc Thành Công", "success");
                 }
             }
         }
@@ -482,7 +482,7 @@ var lokeyFunction = function(){
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+                        swal("", "\nBạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");
@@ -500,13 +500,13 @@ var lokeyFunction = function(){
             });
             jQuery(function () {
                 jQuery(".add").click(function () {
-                    swal("", "Bạn Đã Sửa Thành Công", "success");
+                    swal("", "\nBạn Đã Sửa Thành Công", "success");
                 });
             });
             // Delete Hàng
             $(document).on("click", ".delete", function () {
                 $(this).parents("tr").remove();
-                swal("", "Bạn Đã Xóa Thành Công", "success");
+                swal("", "\nBạn Đã Xóa Thành Công", "success");
                 $(".add-new").removeAttr("disabled");
             });
         });

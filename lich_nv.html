@@ -178,9 +178,9 @@ for(let i=0;i<5;++i){
     <div class="container-fluid al">    
         <div id="clock"></div>
         <Br>
-        <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
+        <p class="timkiemnhanvien"><b>TÌM KIẾM LỊCH CÔNG TÁC:</b></p><Br><Br>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã nhân viên cần tìm..."
-            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Nhân Viên">
+            data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Lịch công tác">
         <i class="fa fa-search" aria-hidden="true"></i>
 
         <form action="">
@@ -204,7 +204,6 @@ for(let i=0;i<5;++i){
                 <tr class="ex">
                     <th>Mã nhân viên</th>
                     <th width="auto">Tên Nhân Viên</th>
-                    <th>Mã Quản Lý</th>
                     <th width="auto">Lịch công tác</th>
                     <th>ID lịch công tác</th>
                     <th width="5px; !important">Tính Năng</th>
@@ -214,7 +213,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV01</td>
                     <td>Hà Hải Việt</td>
-                    <td>QL01</td>
                     <td>8-17h Thứ 2,Thứ 4,Thứ 6 hàng tuần,</td>
                     <td>A11</td>
                     <td>
@@ -223,7 +221,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV02</td>
                     <td>Nguyễn Việt Anh</td>
-                    <td>QL02</td>
                     <td>8-17h Thứ 3,Thứ 5,Thứ 7 hàng tuần</td>
                     <td>A22</td>
                     <td>
@@ -232,7 +229,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV03</td>
                     <td>Trần Quý Đức</td>
-                    <td>QL01</td>
                     <td>8-17h Thứ 2,Thứ 4,Thứ 6 hàng tuần,</td>
                     <td>A33</td>
                     <td></td>
@@ -240,7 +236,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV04</td>
                     <td>Nguyễn Thị Thanh Thảo</td>
-                    <td>QL01</td>
                     <td>8-17h Thứ 2,Thứ 4,Thứ 6 hàng tuần,</td>
                     <td>A88</td>
                     <td>
@@ -249,7 +244,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV05</td>
                     <td>Lê Minh Hiếu</td>
-                    <td>QL02</td>
                     <td>8-17h Thứ 3,Thứ 5,Thứ 7 hàng tuần</td>
                     <td>A44</td>
                     <td>
@@ -258,7 +252,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV06</td>
                     <td>Hà Anh Tú</td>
-                    <td>QL02</td>
                     <td>8-17h Thứ 3,Thứ 5,Thứ 7 hàng tuần</td>
                     <td>A55</td>
                     <td>
@@ -267,7 +260,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV07</td>
                     <td>Nguyễn Tiến Dũng</td>
-                    <td>QL03</td>
                     <td>8-11h Thứ 2,Thứ 4,Thứ 6;13h30-17h Thứ 3,Thứ 5, Thứ 7 hàng tuần</td>
                     <td>A66</td>
                     <td>
@@ -276,7 +268,6 @@ for(let i=0;i<5;++i){
                 <tr>
                     <td>NV08</td>
                     <td>Nguyễn Quang Hiếu</td>
-                    <td>QL03</td>
                     <td>8-11h Thứ 2,Thứ 4,Thứ 6;13h30-17h Thứ 3,Thứ 5, Thứ 7 hàng tuần</td>
                     <td>A77</td>
                     <td>
@@ -429,7 +420,7 @@ for(let i=0;i<5;++i){
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+                        swal("\n", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");

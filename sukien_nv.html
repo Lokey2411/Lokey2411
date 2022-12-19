@@ -183,7 +183,7 @@ for(let i=0;i<5;++i){
     <div class="container-fluid al">    
         <div id="clock"></div>
         <Br>
-        <p class="timkiemnhanvien"><b>TÌM KIẾM NHÂN VIÊN:</b></p><Br><Br>
+        <p class="timkiemnhanvien"><b>TÌM KIẾM SỰ KIỆN:</b></p><Br><Br>
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập mã sự kiện cần tìm..."
             data-toggle="tooltip" data-placement="bottom" title="Tìm Kiếm Sự kiện">
         <i class="fa fa-search" aria-hidden="true"></i>
@@ -414,7 +414,7 @@ for(let i=0;i<5;++i){
                 if (!empty) {
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+                        swal("\n", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");

@@ -204,6 +204,8 @@ function timeBreak(clock){
 
         </form>
         <b>CHỨC NĂNG CHÍNH:</b><Br>
+        <button class="nv btn add-new" type="button" data-toggle="tooltip" data-placement="top"
+            title="Thêm Nhân Viên"><i class="fas fa-user-plus"></i></button>
         <button class="nv" type="button" onclick="sortTable()" data-toggle="tooltip" data-placement="top"
             title="Sắp xếp danh sách nhân viên"><i class="fa fa-filter" aria-hidden="true"></i></button>
         <button class="nv xuat" data-toggle="tooltip" data-placement="top" title="Xuất File"><i
@@ -233,7 +235,6 @@ function timeBreak(clock){
                     <td>Hà Hải Việt</td>
                     <td>QL01</td>
                     <td class = "clock" onclick = "timeBreak(this); this.onclick = function(){}"></td>
-
                     <td class = "clock" onclick = "timeBreak(this); this.onclick = function(){}"></td>
                     <td></td>
                 </tr>
@@ -426,7 +427,7 @@ function timeBreak(clock){
                     '<td><input type="text" class="form-control" name="namsinh" id="namsinh" value="" placeholder="Nhập Mã quản lý"></td>' +
                     '<td class = "clock" onclick = "timeBreak(this); this.onclick = function(){} this.onclick = function(){}"></td>' +
                     '<td class = "clock" onclick = "timeBreak(this); this.onclick = function(){} this.onclick = function(){}"></td>' +
-                    '<td>' + actions + '</td>' +
+                    '<td><a class="add" title="Lưu Lại" data-toggle="tooltip" onclick = function(){this.style.display = "none"}></><i class="fa fa-floppy-o" aria-hidden="true"></i></a></td>' +
                     '</tr>';
                 $("table").append(row);
                 $("table tbody tr").eq(index + 1).find(".edit").toggle();
@@ -452,7 +453,7 @@ function timeBreak(clock){
                     input.each(function () {
                         $(this).parent("td").html($(this).val());
                         // console.log(input); 
-                        swal("Thành Công", "Bạn Đã Cập Nhật Thành Công", "success");
+                        swal("", "Bạn Đã Cập Nhật Thành Công", "success");
                     });
                     $(this).parents("tr").find(".edit").toggle();
                     $(".add-new").removeAttr("disabled");

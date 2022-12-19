@@ -12,20 +12,6 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
     var actions = $("table td:last-child").html();
     // Append table with add row form on add new button click
-    $(".add-new").click(function () {
-        $(this).attr("disabled", "disabled");
-        var index = $("table tbody tr:last-child").index();
-        var row = '<tr>' +
-            '<td><input type="text" class="form-control" name="manv" id="manv" value="" placeholder="Nhập Mã quản lý"></td>' +
-            '<td><input type="text" class="form-control" name="name" id="name" placeholder="Nhập Tên"></td>' +
-            '<td><input type="text" class="form-control" name="chucvu" id="chucvu" value="" placeholder="Nhập Chức Vụ"></td>' +
-            '<td><input type="text" class="form-control" name="captrn" id="gioitinh" placeholder="Nhập Đơn vị"></td>' +
-            '<td>' + actions + '</td>' +
-            '</tr>';
-        $("table").append(row);
-        $("table tbody tr").eq(index + 1).find(".edit").toggle();
-        $('[data-toggle="tooltip"]').tooltip();
-    });
     //Add Hàng
     $(document).on("click", ".add", function () {
         var empty = false;
